@@ -39,5 +39,35 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
+
+        public override string ToString()
+        {
+            if (Name == "")
+            {
+                Name = "Data not available";
+            }
+            if (EmployerName.Value == null)
+            {
+                EmployerName.Value = "Data not available";
+            }
+            if (EmployerLocation.Value == null)
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            if (JobType.Value == null)
+            {
+                JobType.Value = "Data not available";
+            }
+            if (JobCoreCompetency.Value == null)
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
+            if (Name == "Data not available" && EmployerName.Value == "Data not available" && EmployerLocation.Value == "Data not available" && JobType.Value == "Data not available" && JobCoreCompetency.Value == "Data not available")
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
+
+            return "\nID: " + Id + "\nName: " + Name + "\nEmployer: " + EmployerName + "\nLocation: " + EmployerLocation + "\nPosition Type: " + JobType + "\nCore Competency: " + JobCoreCompetency + "\n";
+        }
     }
 }

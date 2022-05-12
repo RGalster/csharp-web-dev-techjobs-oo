@@ -1,40 +1,40 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class CoreCompetency
+    public class CoreCompetency : JobField
     {
-        public int id { get; set; }
-        private static int nextId = 1;
-        public string value { get; set; }
+        //public int Id { get; set; }
+        //private static int nextId = 1;
+        //public string Value { get; set; }
 
-        // TODO: Change the fields to auto-implemented properties.
-        // changed id and value
+        //// TODO: Change the fields to auto-implemented properties.
+        //// changed id and value
 
-        public CoreCompetency()
+        //public CoreCompetency()
+        //{
+        //    Id = nextId;
+        //    nextId++;
+        //}
+
+        public CoreCompetency(string value) : base(value)
         {
-            id = nextId;
-            nextId++;
+            Value = value;
         }
 
-        public CoreCompetency(string v) : this()
-        {
-            value = v;
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return obj is CoreCompetency competency &&
+        //           Id == competency.Id;
+        //}
 
-        public override bool Equals(object obj)
-        {
-            return obj is CoreCompetency competency &&
-                   id == competency.id;
-        }
+        //public override int GetHashCode()
+        //{
+        //    return HashCode.Combine(Id);
+        //}
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(id);
-        }
-
-        public override string ToString()
-        {
-            return value;
-        }
+        //public override string ToString()
+        //{
+        //    return Value;
+        //}
     }
 }
